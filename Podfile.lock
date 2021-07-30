@@ -12,7 +12,7 @@ DEPENDENCIES:
   - Sparkle
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Crashlytics
     - Fabric
     - Sparkle
@@ -27,11 +27,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Clipy/LoginServiceKit.git
 
 SPEC CHECKSUMS:
-  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
-  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
+  Crashlytics: 3df6ef91701e6dc98005417f6d4f37ccf0cd3344
+  Fabric: d7d7820bb92eaf2c3fc36733f6e5ca9692d921e8
   LoginServiceKit: 5b4736234dc4cc96d786d8cd83e43b9ce5e7f1ca
   Sparkle: 1678d4707e7665960c7d1b43aca125e6392d11c4
 
 PODFILE CHECKSUM: f237920f869d400b1819fdc4dd988f78ac218ef7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.2

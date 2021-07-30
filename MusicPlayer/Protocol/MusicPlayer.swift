@@ -16,7 +16,7 @@ struct MusicPlayerConfig {
 public protocol MusicPlayer: class {
     
     init?()
-    weak var delegate: MusicPlayerDelegate? { get set }
+    var delegate: MusicPlayerDelegate? { get set }
     
     /// Player name of the MusicPlayer instance.
     var name: MusicPlayerName { get }

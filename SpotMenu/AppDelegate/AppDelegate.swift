@@ -32,8 +32,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let issuesURL = URL(string: "https://github.com/kmikiy/SpotMenu/issues")
     private let kmikiyURL = URL(string: "https://github.com/kmikiy")
     private let menu = StatusMenu().menu
-    private let spotMenuIcon = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImage"))
-    private let spotMenuIconItunes = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImageItunes"))
+    private let spotMenuIcon = NSImage(named: "StatusBarButtonImage")
+    private let spotMenuIconItunes = NSImage(named: "StatusBarButtonImageItunes")
     private var lastStatusTitle: String = ""
     private var removeHudTimer: Timer?
     private var musicPlayerManager: MusicPlayerManager!
@@ -81,10 +81,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let lastMusicPlayer = musicPlayerManager.existMusicPlayer(with: lastMusicPlayerName)
         musicPlayerManager.currentPlayer = lastMusicPlayer
 
-        let popoverVC = PopOverViewController(nibName: NSNib.Name(rawValue: "PopOver"), bundle: nil)
+        let popoverVC = PopOverViewController(nibName: "PopOver", bundle: nil)
         popoverVC.setUpMusicPlayerManager()
 
-        hiddenController = (NSStoryboard(name: NSStoryboard.Name(rawValue: "Hidden"), bundle: nil).instantiateInitialController() as! NSWindowController)
+        hiddenController = (NSStoryboard(name: "Hidden", bundle: nil).instantiateInitialController() as! NSWindowController)
         hiddenController?.contentViewController = popoverVC
         hiddenController?.window?.isOpaque = false
         hiddenController?.window?.backgroundColor = .clear
@@ -164,7 +164,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func hotkeyAction() {
-        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Hud"), bundle: nil)
+        let sb = NSStoryboard(name: "Hud", bundle: nil)
         hudController = sb.instantiateInitialController() as? HudWindowController
 
         hudController!.setText(text: StatusItemBuilder(
@@ -218,7 +218,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Popover methods
 
     @objc func openPrefs(_: NSMenuItem) {
-        preferencesController = (NSStoryboard(name: NSStoryboard.Name(rawValue: "Preferences"), bundle: nil).instantiateInitialController() as! NSWindowController)
+        preferencesController = (NSStoryboard(name: "Preferences", bundle: nil).instantiateInitialController() as! NSWindowController)
         preferencesController?.showWindow(self)
     }
 

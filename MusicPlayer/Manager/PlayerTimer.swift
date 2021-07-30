@@ -90,7 +90,7 @@ class PlayerTimer {
         // start timer
         timer?.invalidate()
         timer = Timer(timeInterval: 2, target: self, selector: #selector(notifyAllObservers(_:)), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .commonModes)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
     }
     
     @objc private func notifyAllObservers(_ timer: Timer) {

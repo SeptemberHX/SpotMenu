@@ -88,7 +88,7 @@ private extension ScrollingTextView {
                 timer = Timer.scheduledTimer(timeInterval: newInterval, target: self, selector: #selector(update(_:)), userInfo: nil, repeats: true)
 
                 guard let timer = timer else { return }
-                RunLoop.main.add(timer, forMode: .commonModes)
+                RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
             } else {
                 // Fallback on earlier versions
             }

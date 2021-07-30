@@ -170,7 +170,7 @@ class ToastView: View {
         text.string = message
         text.font = Font.systemFont(ofSize: style.fontSize)
         text.fontSize = style.fontSize
-        text.alignmentMode = "center"
+        text.alignmentMode = convertToCATextLayerAlignmentMode("center")
         text.foregroundColor = style.foregroundColor.cgColor
         text.backgroundColor = style.backgroundColor.cgColor
         text.contentsScale = _layer.contentsScale // For Retina Display
@@ -277,4 +277,9 @@ extension View {
             hideAnimation(view: activityView, style: IndicatorStyle.shared)
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCATextLayerAlignmentMode(_ input: String) -> CATextLayerAlignmentMode {
+	return CATextLayerAlignmentMode(rawValue: input)
 }

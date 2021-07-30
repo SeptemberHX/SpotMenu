@@ -66,7 +66,7 @@ private func addAnimation(to view: View, style: Style, show: Bool) {
     let key = show ? "show animation" : "hide animation"
 
     let anim = CABasicAnimation(keyPath: "opacity")
-    let timing = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    let timing = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
     anim.timingFunction = timing
     let currentLayerTime = view._layer.convertTime(CACurrentMediaTime(), from: nil)
     anim.beginTime = currentLayerTime + CFTimeInterval(style.fadeInOutDelay)

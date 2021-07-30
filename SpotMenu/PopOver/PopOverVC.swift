@@ -14,8 +14,8 @@ final class PopOverViewController: NSViewController {
     private var duration: Double = 0
     private var isPlaying: Bool = false
     private var timer: Timer!
-    private let spotMenuIcon = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImage"))
-    private let spotMenuIconItunes = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImageItunes"))
+    private let spotMenuIcon = NSImage(named: "StatusBarButtonImage")
+    private let spotMenuIconItunes = NSImage(named: "StatusBarButtonImageItunes")
 
     // MARK: - IBOutlets
 
