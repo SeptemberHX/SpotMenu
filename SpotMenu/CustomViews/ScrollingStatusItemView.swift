@@ -114,16 +114,28 @@ private extension ScrollingStatusItemView {
         addSubview(iconImageView)
         addSubview(scrollingTextView)
 
+//        NSLayoutConstraint.activate([
+//            scrollingTextView.rightAnchor.constraint(equalTo: rightAnchor),
+//            scrollingTextView.topAnchor.constraint(equalTo: topAnchor),
+//            scrollingTextView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            scrollingTextView.leftAnchor.constraint(equalTo: iconImageView.rightAnchor)])
+//
+//        NSLayoutConstraint.activate([
+//            iconImageView.leftAnchor.constraint(equalTo: leftAnchor),
+//            iconImageView.topAnchor.constraint(equalTo: topAnchor),
+//            iconImageView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        
+        // move the player icon to the right side
         NSLayoutConstraint.activate([
-            scrollingTextView.rightAnchor.constraint(equalTo: rightAnchor),
             scrollingTextView.topAnchor.constraint(equalTo: topAnchor),
             scrollingTextView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            scrollingTextView.leftAnchor.constraint(equalTo: iconImageView.rightAnchor)])
-
+            scrollingTextView.leftAnchor.constraint(equalTo: leftAnchor)])
+        
         NSLayoutConstraint.activate([
-            iconImageView.leftAnchor.constraint(equalTo: leftAnchor),
+            iconImageView.leftAnchor.constraint(equalTo: scrollingTextView.rightAnchor),
             iconImageView.topAnchor.constraint(equalTo: topAnchor),
-            iconImageView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+            iconImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            iconImageView.rightAnchor.constraint(equalTo: rightAnchor)])
     }
 
     func clicked(_ bool: Bool) {
